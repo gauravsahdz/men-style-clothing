@@ -34,7 +34,7 @@ const ProductDetail = () => {
 
   const handleAddToCart = () => {
     setKey((prevKey) => prevKey + 1);
-    addToCart(product);
+    addToCart(product as Product);
     setShowAlert(true);
   };
 
@@ -51,7 +51,7 @@ const ProductDetail = () => {
         key={key}
       />
       <div className="flex flex-col lg:flex-row items-center justify-center space-y-4 lg:space-y-0 lg:space-x-4 md:px-8 lg:px-16 lg:py-16 bg-white">
-        <Image src={thumbnail} alt={name} width={300} height={300} />
+        <Image src={thumbnail} alt={title} width={300} height={300} />
         <div className="flex flex-col justify-center items-start space-y-4 w-full lg:w-1/2 px-4 lg:px-0 lg:py-8 md:py-8 lg:py-0">
           <h1 className="text-2xl font-bold">{title}</h1>
           <p className="text-gray-600 text-justify">{description}</p>
@@ -86,7 +86,7 @@ const ProductDetail = () => {
             <Image
               key={index}
               src={image}
-              alt={name}
+              alt={title}
               width={100}
               height={100}
               className="rounded-md"

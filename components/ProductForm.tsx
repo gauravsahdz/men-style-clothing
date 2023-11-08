@@ -18,17 +18,17 @@ const ProductForm = ({ id, task }: ProductFormProps) => {
   const [price, setPrice] = useState(0);
   const [sizes, setSizes] = useState<string[]>([]);
   const [hovered, setHovered] = useState(false);
-  const [selectedFile, setSelectedFile] = useState(null);
+  const [selectedFile, setSelectedFile] = useState<File>();
   const [imageList, setImageList] = useState<File[]>([]);
 
-  const handleImageInputChange = (event) => {
+  const handleImageInputChange = (event: any) => {
     event.preventDefault();
     const file = event.target.files[0];
     setImageList([...imageList, file]);
     event.target.value = null; // Reset the input field to allow selecting the same file again
   };
 
-  const handleFileChange = (event) => {
+  const handleFileChange = (event: any) => {
     const file = event.target.files[0];
     if (file) {
       setSelectedFile(file);
@@ -36,7 +36,7 @@ const ProductForm = ({ id, task }: ProductFormProps) => {
     }
   };
 
-  const handleDragOver = (event) => {
+  const handleDragOver = (event: any) => {
     event.preventDefault();
     setHovered(true);
   };
@@ -45,7 +45,7 @@ const ProductForm = ({ id, task }: ProductFormProps) => {
     setHovered(false);
   };
 
-  const handleDrop = (event) => {
+  const handleDrop = (event: any) => {
     event.preventDefault();
     setHovered(false);
 
