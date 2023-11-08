@@ -41,11 +41,7 @@ const CartItem: React.FC<CartItemProps> = ({
   );
 };
 
-type PageProps = {
-  products: Product[];
-};
-
-const Page: React.FC<PageProps> = () => {
+const Page = () => {
   const cart = useCartStore((state) => state.cart);
   const incrementQuantity = useCartStore((state) => state.incrementQuantity);
 
