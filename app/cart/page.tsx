@@ -97,4 +97,3 @@ const Page: React.FC<PageProps> = () => {
 };
 
 export default Page;
-export { CartItem };
