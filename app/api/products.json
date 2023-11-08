@@ -1,0 +1,100 @@
+[
+  {
+    "id": "1",
+    "title": "T-shirt 1",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam id aliquam ultrices, nisl nunc ultrices nunc, vitae ultricies nisl nunc eu nunc. Sed euismod, diam aliquam ultrices, nisl nunc ultrices nunc, vitae ultricies nisl nunc eu nunc.",
+    "price": 19.99,
+    "discountPercentage": 10,
+    "rating": 4.5,
+    "stock": 10,
+    "brand": "Nike",
+    "category": "T-shirt",
+    "thumbnail": "https://i.pinimg.com/564x/05/da/ad/05daadda790bd6a262f7cf63e193117b.jpg",
+    "sizes": ["M", "L", "XL"],
+    "images": [
+      "https://i.pinimg.com/564x/05/da/ad/05daadda790bd6a262f7cf63e193117b.jpg",
+      "https://i.pinimg.com/564x/05/da/ad/05daadda790bd6a262f7cf63e193117b.jpg",
+      "https://i.pinimg.com/564x/05/da/ad/05daadda790bd6a262f7cf63e193117b.jpg",
+      "https://i.pinimg.com/564x/05/da/ad/05daadda790bd6a262f7cf63e193117b.jpg"
+    ],
+    "quantity": 10
+  },
+  {
+    "id": "2",
+    "title": "T-shirt 2",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam id aliquam ultrices, nisl nunc ultrices nunc, vitae ultricies nisl nunc eu nunc. Sed euismod, diam aliquam ultrices, nisl nunc ultrices nunc, vitae ultricies nisl nunc eu nunc.",
+    "price": 20,
+    "discountPercentage": 8,
+    "rating": 4,
+    "stock": 20,
+    "brand": "Polo",
+    "category": "T-shirt",
+    "thumbnail": "https://i.pinimg.com/564x/2b/61/54/2b61542437c2df774c3ca664bd8f8418.jpg",
+    "sizes": ["S", "M", "L", "XL"],
+    "images": [
+      "https://i.pinimg.com/564x/2b/61/54/2b61542437c2df774c3ca664bd8f8418.jpg",
+      "https://i.pinimg.com/564x/2b/61/54/2b61542437c2df774c3ca664bd8f8418.jpg",
+      "https://i.pinimg.com/564x/2b/61/54/2b61542437c2df774c3ca664bd8f8418.jpg",
+      "https://i.pinimg.com/564x/2b/61/54/2b61542437c2df774c3ca664bd8f8418.jpg"
+    ],
+    "quantity": 10
+  },
+  {
+    "id": "3",
+    "title": "T-shirt 3",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam id aliquam ultrices, nisl nunc ultrices nunc, vitae ultricies nisl nunc eu nunc. Sed euismod, diam aliquam ultrices, nisl nunc ultrices nunc, vitae ultricies nisl nunc eu nunc.",
+    "price": 14,
+    "discountPercentage": 7,
+    "rating": 4.2,
+    "stock": 10,
+    "brand": "PRADA",
+    "category": "T-shirt",
+    "thumbnail": "https://i.pinimg.com/564x/6e/a1/bb/6ea1bb5115ad2d56e8ad8ee105d847d0.jpg",
+    "sizes": ["S", "M", "L", "XL"],
+    "images": [
+      "https://i.pinimg.com/564x/6e/a1/bb/6ea1bb5115ad2d56e8ad8ee105d847d0.jpg",
+      "https://i.pinimg.com/564x/6e/a1/bb/6ea1bb5115ad2d56e8ad8ee105d847d0.jpg",
+      "https://i.pinimg.com/564x/6e/a1/bb/6ea1bb5115ad2d56e8ad8ee105d847d0.jpg",
+      "https://i.pinimg.com/564x/6e/a1/bb/6ea1bb5115ad2d56e8ad8ee105d847d0.jpg"
+    ],
+    "quantity": 10
+  },
+  {
+    "id": "4",
+    "title": "T-shirt 4",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam id aliquam ultrices, nisl nunc ultrices nunc, vitae ultricies nisl nunc eu nunc. Sed euismod, diam aliquam ultrices, nisl nunc ultrices nunc, vitae ultricies nisl nunc eu nunc.",
+    "price": 30,
+    "discountPercentage": 5,
+    "rating": 3.8,
+    "stock": 50,
+    "brand": "CHANEL",
+    "category": "T-shirt",
+    "thumbnail": "https://i.pinimg.com/564x/c5/26/85/c5268589c13524530861919b5426dea7.jpg",
+    "sizes": ["S", "M", "L", "XL"],
+    "images": [
+      "https://i.pinimg.com/564x/c5/26/85/c5268589c13524530861919b5426dea7.jpg",
+      "https://i.pinimg.com/564x/c5/26/85/c5268589c13524530861919b5426dea7.jpg",
+      "https://i.pinimg.com/564x/c5/26/85/c5268589c13524530861919b5426dea7.jpg",
+      "https://i.pinimg.com/564x/c5/26/85/c5268589c13524530861919b5426dea7.jpg"
+    ],
+    "quantity": 10
+  },
+  {
+    "id": "5",
+    "title": "T-shirt 5",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam id aliquam ultrices, nisl nunc ultrices nunc, vitae ultricies nisl nunc eu nunc. Sed euismod, diam aliquam ultrices, nisl nunc ultrices nunc, vitae ultricies nisl nunc eu nunc.",
+    "price": 25,
+    "rating": 3.5,
+    "stock": 10,
+    "brand": "H&M",
+    "category": "T-shirt",
+    "thumbnail": "https://i.pinimg.com/564x/5b/15/df/5b15dfaa610fec62086a9ca752fdd1e8.jpg",
+    "sizes": ["S", "M", "L", "XL"],
+    "images": [
+      "https://i.pinimg.com/564x/5b/15/df/5b15dfaa610fec62086a9ca752fdd1e8.jpg",
+      "https://i.pinimg.com/564x/5b/15/df/5b15dfaa610fec62086a9ca752fdd1e8.jpg",
+      "https://i.pinimg.com/564x/5b/15/df/5b15dfaa610fec62086a9ca752fdd1e8.jpg",
+      "https://i.pinimg.com/564x/5b/15/df/5b15dfaa610fec62086a9ca752fdd1e8.jpg"
+    ]
+  }
+]
