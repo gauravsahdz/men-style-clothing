@@ -5,7 +5,7 @@ import Sidebar from "@/components/admin/Sidebar";
 import Image from "next/image";
 import React, { useState } from "react";
 
-const page = () => {
+const Page = () => {
   const [openSide, setOpenSide] = useState(false);
   const toggleButtonClass = `fixed top-19 rounded-r-full z-50 flex items-center justify-center w-14 h-14 bg-gray-100 shadow-md md:hidden lg:hidden block
     ${openSide ? " left-64 transition-all duration-500" : "left-0 transition-all duration-500"}
@@ -33,4 +33,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
