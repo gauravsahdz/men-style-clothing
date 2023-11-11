@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import "@/styles/components/_sidebar.css";
 import { useRouter } from "next/navigation";
-import routes from "@/utils/routes";
+import {adminRoutes} from "@/utils/routes";
 
 type props = {
   openSide: boolean;
@@ -42,7 +42,7 @@ const ResponsiveSidebar = ({ openSide }: props) => {
 
         {/* navbar section  */}
         <nav>
-          {routes.map((route, index) => (
+          {adminRoutes.map((route, index) => (
             <a
               className="flex items-center mt-2 py-2 px-6  bg-opacity-25 hover:bg-gray-100 cursor-pointer"
               key={index}

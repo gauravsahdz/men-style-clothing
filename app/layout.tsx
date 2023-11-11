@@ -5,6 +5,8 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Modal from "@/components/Modal";
+import { SessionProvider } from "next-auth/react";
+import AuthProvider from "@/Context/AuthProvider";
 
 export default function RootLayout({
   children,
@@ -14,9 +16,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Nav />
-        {children}
-        <Footer />
+        <AuthProvider>
+          <Nav />
+          {children}
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );

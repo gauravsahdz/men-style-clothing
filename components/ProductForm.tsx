@@ -101,7 +101,10 @@ const ProductForm = ({ id, task }: ProductFormProps) => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-50 px-4 sm:px-6 lg:px-8">
       <h1 className="text-2xl font-bold">{task} Product</h1>
-      <form onSubmit={handleSubmit} className="max-w-screen-xl w-full mt-6 mb-6">
+      <form
+        onSubmit={handleSubmit}
+        className="max-w-screen-xl w-full mt-6 mb-6"
+      >
         {/* title section  */}
         <div className="mb-4">
           <label htmlFor="title" className="block font-medium text-gray-700">
@@ -306,8 +309,9 @@ const ProductForm = ({ id, task }: ProductFormProps) => {
         <div className="mb-4">
           {imageList.length > 0 && (
             <div>
-              <p className="font-medium text-gray-700 md:text-sm text-xs sm:text-base"
-              >Added Images:</p>
+              <p className="font-medium text-gray-700 md:text-sm text-xs sm:text-base">
+                Added Images:
+              </p>
               <ul>
                 {imageList.map((image, index) => (
                   <li key={index}>
@@ -318,10 +322,7 @@ const ProductForm = ({ id, task }: ProductFormProps) => {
                       <button
                         className="text-red-600 hover:text-red-900"
                         onClick={() => {
-                            setImageList(
-                                imageList.filter((_, i) => i !== index)
-                            );
-                            
+                          setImageList(imageList.filter((_, i) => i !== index));
                         }}
                       >
                         Remove

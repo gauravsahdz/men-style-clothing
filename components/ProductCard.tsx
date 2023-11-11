@@ -29,7 +29,7 @@ const ProductCard = ({
           alt={title}
           width={300}
           height={400}
-          objectFit="cover"
+          layout="responsive"
           // className="hover:transform hover:scale-110 transition duration-300 ease-in-out"
         />
       </div>
