@@ -20,11 +20,8 @@ const Nav = () => {
   const totalItems = useCartStore((state) => state.totalItems);
 
   useEffect(() => {
-    console.log("session", session);
     const setUpProviders = async () => {
       const response = await getProviders();
-      console.log("dffdfd", response);
-
       setProviders(response);
     };
 
@@ -56,7 +53,7 @@ const Nav = () => {
             {session?.user ? (
               <div className="flex">
                 <Image
-                  src={session?.user?.image}
+                  src={session?.user?.image || ""}
                   alt="Profile"
                   width={37}
                   height={37}
