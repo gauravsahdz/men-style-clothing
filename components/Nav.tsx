@@ -10,11 +10,13 @@ import "@/styles/components/_navbar.css";
 import { navRoutes } from "@/utils/routes";
 import { signIn, useSession, getProviders, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import hamburgerIcon from "public/images/hamburger.svg";
 
 const Nav = () => {
   const { data: session } = useSession();
   const router = useRouter();
   const [toggleDropdown, setToggleDropdown] = useState(false);
+  const [toggleNavDropdown, setToggleNavDropdown] = useState(false);
 
   const [providers, setProviders] = useState<any>(null);
   const totalItems = useCartStore((state) => state.totalItems);
@@ -32,7 +34,13 @@ const Nav = () => {
     <div className="navbar flex flex-wrap items-center justify-between w-full px-4 py-4 lg:px-0 bg-white z-10 sticky top-0 shadow-md">
       <div className="flex items-center flex-shrink-0 text-black mr-6 hover:cursor-pointer ml-4">
         <Link href="/" legacyBehavior>
-          <Image src={logo} alt="logo" width={150} height={50} />
+          <Image
+            src={logo}
+            alt="logo"
+            width={150}
+            height={50}
+            layout="responsive"
+          />
         </Link>
       </div>
       <div
@@ -118,6 +126,78 @@ const Nav = () => {
             </li>
           </ul>
         </nav>
+      </div>
+
+      <div className="block lg:hidden">
+        <button
+          id="nav-toggle"
+          className="flex items-center px-3 py-2 border rounded text-black border-black hover:text-black hover:border-black"
+          onClick={() => setToggleNavDropdown((prev) => !prev)}
+        >
+          <Image src={hamburgerIcon} alt="hamburger" width={20} height={20} />
+        </button>
+        {toggleNavDropdown && (
+          <div className="absolute right-0 top-16 bg-white shadow-md rounded-md py-2 px-4 flex flex-col w-40">
+            <Link
+              href="/"
+              className="text-sm font-inter text-gray-700 hover:text-gray-500 font-medium mb-2"
+              onClick={() => setToggleNavDropdown(false)}
+            >
+              Home
+            </Link>
+            <Link
+              href="/about"
+              className="text-sm font-inter text-gray-700 hover:text-gray-500 font-medium mb-2"
+              onClick={() => setToggleNavDropdown(false)}
+            >
+              About
+            </Link>
+            <Link
+              href="/contact"
+              className="text-sm font-inter text-gray-700 hover:text-gray-500 font-medium mb-2"
+              onClick={() => setToggleNavDropdown(false)}
+            >
+              Contact
+            </Link>
+            <Link
+              href="/cart"
+              className="text-sm font-inter text-gray-700 hover:text-gray-500 font-medium mb-2"
+              onClick={() => setToggleNavDropdown(false)}
+            >
+              Cart
+            </Link>
+            {!session?.user && (
+              <Link
+                href="/auth/signin"
+                className="text-sm font-inter text-gray-700 hover:text-gray-500 font-medium mb-2"
+                onClick={() => setToggleNavDropdown(false)}
+              >
+                Sign In
+              </Link>
+            )}
+            {session?.user && (
+              <>
+                <Link
+                  href="/profile"
+                  className="text-sm font-inter text-gray-700 hover:text-gray-500 font-medium mb-2"
+                  onClick={() => setToggleNavDropdown(false)}
+                >
+                  Profile
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setToggleNavDropdown(false);
+                    signOut();
+                  }}
+                  className="mb-2 border-t-2 mt-2 w-full transition-all hover:text-black text-center text-sm font-inter flex items-center justify-center border-gray-300"
+                >
+                  Sign Out
+                </button>
+              </>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

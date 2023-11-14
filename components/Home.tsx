@@ -8,24 +8,14 @@ const HomePage = () => {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Carousel Section */}
-      <div className="carousel">
-        <div className="carousel-images">
-          <div className="carousel-image">
-            <Image
-              src={hero}
-              alt="carousel image"
-              layout="responsive" // Use 'responsive' layout mode
-              width={300}
-              height={400}
-            />
-          </div>
-        </div>
-
-        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-          <h1 className="text-4xl font-bold text-white text-center">
-            Get your branded wear today!
-          </h1>
-        </div>
+      <div className="relative">
+        <Image
+          src={hero}
+          alt="carousel image"
+          layout="responsive" // Use 'responsive' layout mode
+          width={300}
+          height={400}
+        />
       </div>
 
       {/* Products Section */}

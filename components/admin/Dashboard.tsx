@@ -84,7 +84,7 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center w-full p-4">
+    <div className="flex flex-col items-center justify-center w-full p-4 flex-wrap">
       {/* Welcome user section  */}
       <div className="w-full bg-white shadow-lg rounded-md">
         <div className="flex justify-between items-center p-4">
@@ -126,23 +126,23 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="flex flex-wrap justify-between w-full pt-4">
+      <div className="w-full pt-4 flex justify-between flex-col sm:flex-row">
         {/* sales graph section  */}
-        <div className=" w-full sm:w-1/2 md:w-1/2 lg:w-2/3 p-4 shadow-lg bg-white mb-4">
+        <div className="w-full sm:w-1/2 md:w-1/2 lg:w-2/3 p-4 shadow-lg bg-white mb-4 mr-2">
           <h1 className="text-lg font-bold mb-2">Sales Overview</h1>
           <LineGraph />
         </div>
 
         {/* Pie chart section */}
-        <div className=" w-full sm:w-1/2 md:w-1/2 lg:w-1/3 p-4 bg-white shadow-lg mb-4">
+        <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 p-4 bg-white shadow-lg mb-4">
           <h1 className="text-lg font-bold mb-2">Order Status</h1>
           <PieChart />
         </div>
       </div>
 
-      <div className="flex flex-wrap w-full pt-2 justify-between">
+      <div className="flex w-full pt-2 justify-between flex-col sm:flex-row">
         {/* Top selling products section */}
-        <div className=" w-full sm:w-1/2 md:w-1/2 lg:w-1/2 p-2 shadow-lg bg-white rounded-md mb-4">
+        <div className="sm:w-1/2 md:w-1/2 lg:w-1/2 p-2 shadow-lg bg-white rounded-md mb-4 mr-2">
           <h1 className="text-lg font-bold">Top Selling Products</h1>
           <div className="h-full overflow-auto">
             <table className="w-full table-auto">
@@ -170,7 +170,7 @@ const Dashboard = () => {
         </div>
 
         {/* customer review section  */}
-        <div className=" w-full sm:w-1/2 md:w-1/2 lg:w-1/2 p-2 shadow-lg bg-white rounded-md mb-4">
+        <div className="sm:w-1/2 md:w-1/2 lg:w-1/2 p-2 shadow-lg bg-white rounded-md mb-4">
           <h1 className="text-lg font-bold mb-4">Customer Reviews</h1>
           <div title="Customer Reviews" className="h-full">
             {tableData2.map((data, index) => (
