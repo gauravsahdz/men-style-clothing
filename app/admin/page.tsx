@@ -6,11 +6,11 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { ReactNode } from "react";
 
-type props = {
+type Props = {
   children: ReactNode;
 };
 
-const AdminPage = ({ children }: props) => {
+const AdminPage = ({ children }: Props) => {
   const [openSide, setOpenSide] = useState(false);
   const router = useRouter();
 
