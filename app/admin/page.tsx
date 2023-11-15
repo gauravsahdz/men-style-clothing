@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-const AdminPage = ({ children }: { children: React.ReactNode }) => {
+const Page = ({ children }: { children: React.ReactNode }) => {
   const [openSide, setOpenSide] = useState(false);
   const router = useRouter();
 
@@ -49,4 +49,4 @@ const AdminPage = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default AdminPage;
+export default Page;

@@ -2,7 +2,7 @@
 "use client";
 import { useParams } from "next/navigation"; // Import useRouter from next/router instead of next/navigation
 import Dashboard from "@/components/admin/Dashboard";
-import AdminPage from "../page";
+import Page from "../page";
 import PageNotFound from "@/components/PageNotFound";
 import ProductTable from "@/pages/ProductTable";
 import EditProduct from "@/pages/Product/editProduct";
@@ -30,9 +30,9 @@ const AdminDynamicPage = () => {
   };
 
   return (
-    <AdminPage>
+    <Page>
       <div className="flex flex-col w-full h-full">{renderPage()}</div>
-    </AdminPage>
+    </Page>
   );
 };
 
