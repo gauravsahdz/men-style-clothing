@@ -2,7 +2,7 @@
 "use client";
 import { useParams } from "next/navigation"; // Import useRouter from next/router instead of next/navigation
 import Dashboard from "@/components/admin/Dashboard";
-import Page from "../page";
+import AdminPage from "../page";
 import PageNotFound from "@/components/PageNotFound";
 import ProductTable from "@/pages/ProductTable";
 import EditProduct from "@/pages/Product/editProduct";
@@ -10,9 +10,7 @@ import AddProduct from "@/pages/Product/addProduct";
 
 const AdminDynamicPage = () => {
   const params = useParams();
-  console.log(params);
   const { id } = useParams<{ id: string }>();
-  console.log("id", id);
 
   const renderPage = () => {
     switch (params?.dynamicPage) {
@@ -30,9 +28,9 @@ const AdminDynamicPage = () => {
   };
 
   return (
-    <Page>
+    <AdminPage>
       <div className="flex flex-col w-full h-full">{renderPage()}</div>
-    </Page>
+    </AdminPage>
   );
 };
 
