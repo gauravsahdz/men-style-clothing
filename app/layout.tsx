@@ -4,9 +4,8 @@ config.autoAddCss = false;
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import Modal from "@/components/Modal";
-import { SessionProvider } from "next-auth/react";
 import AuthProvider from "@/Context/AuthProvider";
+import LoaderProvider from "@/Context/LoaderProvider";
 
 export default function RootLayout({
   children,
@@ -17,9 +16,11 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <AuthProvider>
-          <Nav />
-          {children}
-          <Footer />
+          <LoaderProvider>
+            <Nav />
+            {children}
+            <Footer />
+          </LoaderProvider>
         </AuthProvider>
       </body>
     </html>

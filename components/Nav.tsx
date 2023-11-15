@@ -98,7 +98,7 @@ const Nav = () => {
                   Object.values(providers).map((provider: any) => (
                     <li
                       className="account hover:cursor-pointer"
-                      onClick={() => router.push("/auth/signin")}
+                      onClick={() => router.push("/signin")}
                       key={provider.name}
                     >
                       <a className="lg:p-4 py-3 px-0 block border-b-2 border-transparent">
@@ -168,7 +168,7 @@ const Nav = () => {
             </Link>
             {!session?.user && (
               <Link
-                href="/auth/signin"
+                href="/signin"
                 className="text-sm font-inter text-gray-700 hover:text-gray-500 font-medium mb-2"
                 onClick={() => setToggleNavDropdown(false)}
               >

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Product } from "@/types/product";
 
