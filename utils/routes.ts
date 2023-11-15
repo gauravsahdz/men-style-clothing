@@ -1,7 +1,7 @@
 export const adminRoutes = [
   {
     name: "Home",
-    path: "/admin/home",
+    path: "/admin/dashboard",
     icon: "/images/home.svg",
   },
   {

@@ -105,7 +105,7 @@ const ProductTable = () => {
   };
 
   return (
-    <div className="product_table_container flex flex-col mx-4 mb-4 mt-8">
+    <div className="flex flex-col mb-4 mt-8 w-full p-4">
       <Modal
         show={openModal}
         message={message}
@@ -123,10 +123,10 @@ const ProductTable = () => {
       </div>
 
       <div className="-my-2 overflow-x-auto">
-        <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+        <div className="py-2 align-middle inline-block min-w-full">
           <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
             <div style={{ overflowX: "auto" }}>
-              <table className="min-w-full divide-y divide-gray-200">
+              <table className="min-w-full divide-y divide-gray-200 lg:table sm:table">
                 <thead className="bg-gray-50">
                   <tr>
                     <TableHeader
@@ -186,7 +186,7 @@ const ProductTable = () => {
                 <tbody className="bg-white divide-y divide-gray-200">
                   {currentProducts.map((product) => (
                     <tr key={product.id}>
-                      <td className="px-6 py-4 whitespace-nowrap">
+                      <td className="px-6 py-4 whitespace-nowrap lg:table-cell sm:table-cell">
                         <Image
                           src={product.thumbnail}
                           alt={product.title}
@@ -195,22 +195,22 @@ const ProductTable = () => {
                           height={100}
                         />
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
+                      <td className="px-6 py-4 whitespace-nowrap lg:table-cell sm:table-cell">
                         {product.title}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
+                      <td className="px-6 py-4 whitespace-nowrap lg:table-cell sm:table-cell">
                         {product.description.slice(0, 50)}...
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
+                      <td className="px-6 py-4 whitespace-nowrap lg:table-cell sm:table-cell">
                         {product.discountPercentage}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
+                      <td className="px-6 py-4 whitespace-nowrap lg:table-cell sm:table-cell">
                         {product.sizes.join(", ")}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
+                      <td className="px-6 py-4 whitespace-nowrap lg:table-cell sm:table-cell">
                         {product.brand}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
+                      <td className="px-6 py-4 whitespace-nowrap lg:table-cell sm:table-cell">
                         {product.category}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium justify-center space-x-4">
@@ -222,7 +222,7 @@ const ProductTable = () => {
                         </button>
 
                         <button
-                          className="text-red-600 hover:text-red-900"
+                          className="text-red-600 hover:text-red-900 mt-2 sm:mt-0"
                           onClick={() => deleteModal(product.id)}
                         >
                           <FontAwesomeIcon icon={faTrash} />

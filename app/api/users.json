@@ -39,5 +39,38 @@
         "updatedAt": "2021-05-01T00:00:00.000Z"
       }
     ]
+  },
+  {
+    "id": 2,
+    "firstName": "Kuwar",
+    "lastName": "Jha",
+    "email": "kuwarjha2500@gmail.com",
+    "password": "levelitup",
+    "phone": "9861234567",
+    "address": "56600, Rajbiraj-03, Saptari, Nepal",
+    "role": "user",
+    "isDelete": false,
+    "createdAt": "2021-05-01T00:00:00.000Z",
+    "updatedAt": "2021-05-01T00:00:00.000Z",
+    "cart": [
+      {
+        "id": 3,
+        "pid": 3,
+        "quantity": 1,
+        "total": 1000,
+        "createdAt": "2021-05-01T00:00:00.000Z",
+        "updatedAt": "2021-05-01T00:00:00.000Z"
+      }
+    ],
+    "orders": [
+      {
+        "id": 1,
+        "pid": 1,
+        "quantity": 2,
+        "total": 2000,
+        "createdAt": "2021-05-01T00:00:00.000Z",
+        "updatedAt": "2021-05-01T00:00:00.000Z"
+      }
+    ]
   }
 ]

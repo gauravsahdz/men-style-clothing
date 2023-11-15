@@ -3,11 +3,16 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import { adminRoutes } from "@/utils/routes";
 
-const Sidebar = () => {
+type props = {
+  handleOptionClick: (option: string) => void;
+};
+
+const Sidebar = ({ handleOptionClick }: props) => {
   const router = useRouter();
   const navigateTo =
-    (path: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
-      router.push(path);
+    (path: string, name: string) =>
+    (e: React.MouseEvent<HTMLAnchorElement>) => {
+      handleOptionClick(path);
     };
 
   return (
@@ -33,7 +38,7 @@ const Sidebar = () => {
             <a
               className="flex items-center mt-2 py-2 px-6  bg-opacity-25 hover:bg-gray-100 cursor-pointer"
               key={index}
-              onClick={navigateTo(route.path)}
+              onClick={navigateTo(route.path, route.name)}
             >
               <Image src={route.icon} width={20} height={20} alt="home" />
               <span className="mx-3">{route.name}</span>

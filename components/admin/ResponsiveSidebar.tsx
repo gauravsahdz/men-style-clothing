@@ -2,13 +2,14 @@ import Image from "next/image";
 import React from "react";
 import "@/styles/components/_sidebar.css";
 import { useRouter } from "next/navigation";
-import {adminRoutes} from "@/utils/routes";
+import { adminRoutes } from "@/utils/routes";
 
 type props = {
   openSide: boolean;
+  handleOptionClick: (option: string) => void;
 };
 
-const ResponsiveSidebar = ({ openSide }: props) => {
+const ResponsiveSidebar = ({ openSide, handleOptionClick }: props) => {
   const firstClass = `flex flex-col w-64 px-4 py-8 bg-white z-50 fixed top-12 block md:hidden lg:hidden ${
     openSide
       ? "left-0 transition-all duration-500"
@@ -18,9 +19,9 @@ const ResponsiveSidebar = ({ openSide }: props) => {
 
   const router = useRouter();
   const navigateTo =
-    (path: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
-        console.log(path);
-      router.push(path);
+    (path: string, name: string) =>
+    (e: React.MouseEvent<HTMLAnchorElement>) => {
+      handleOptionClick(path);
     };
 
   return (
@@ -46,7 +47,7 @@ const ResponsiveSidebar = ({ openSide }: props) => {
             <a
               className="flex items-center mt-2 py-2 px-6  bg-opacity-25 hover:bg-gray-100 cursor-pointer"
               key={index}
-              onClick={navigateTo(route.path)}
+              onClick={navigateTo(route.path, route.name)}
             >
               <Image src={route.icon} width={20} height={20} alt="home" />
               <span className="mx-3">{route.name}</span>

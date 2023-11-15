@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import UserList from "@/app/api/users.json";
 
-const Page = () => {
+const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
@@ -13,11 +13,16 @@ const Page = () => {
 
   const handleSignIn = () => {
     const user = UserList.find((user) => user.email === email);
-    if (user?.password === password) {
-      router.push("/admin/dashboard");
-    } else {
-      alert("Invalid credentials");
+    if (!user) {
+      return alert("User not found");
     }
+    if (user.email !== email) {
+      return alert("Email is incorrect");
+    }
+    if (user.password !== password) {
+      return alert("Password is incorrect");
+    }
+    router.push(user.role === "admin" ? "/admin/dashboard" : "/");
   };
 
   const handleGoogleSignIn = () => {
@@ -109,4 +114,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default Signin;

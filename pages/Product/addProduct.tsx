@@ -1,9 +1,8 @@
-"use client";
 import ProductForm from "@/components/ProductForm";
 import React from "react";
 
-const Page = () => {
+const AddProduct = () => {
   return <ProductForm task="Add" />;
 };
 
-export default Page;
+export default AddProduct;
