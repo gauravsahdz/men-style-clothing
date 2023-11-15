@@ -3,13 +3,9 @@ import ResponsiveSidebar from "@/components/admin/ResponsiveSidebar";
 import Sidebar from "@/components/admin/Sidebar";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import React, { useState, ReactNode, FC } from "react";
+import { useState } from "react";
 
-interface AdminPageProps {
-  children: ReactNode;
-}
-
-const AdminPage: FC<AdminPageProps> = ({ children }) => {
+const AdminPage = ({ children }: { children: React.ReactNode }) => {
   const [openSide, setOpenSide] = useState(false);
   const router = useRouter();
 
