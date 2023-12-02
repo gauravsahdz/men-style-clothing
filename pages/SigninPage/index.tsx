@@ -9,7 +9,7 @@ const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
 
   const handleSignIn = () => {
     const user = UserList.find((user) => user.email === email);
@@ -33,7 +33,7 @@ const Signin = () => {
     if (session?.user) {
       router.push("/");
     }
-  }, []);
+  }, [router, session?.user]);
 
   return (
     <div className="min-h-screen flex items-center justify-center flex-col bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">

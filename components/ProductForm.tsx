@@ -96,7 +96,7 @@ const ProductForm = ({ id, task }: ProductFormProps) => {
         setSelectedFile(new File([], product.thumbnail));
       }
     }
-  }, []);
+  }, [id]);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-50 px-4 sm:px-6 lg:px-8">
