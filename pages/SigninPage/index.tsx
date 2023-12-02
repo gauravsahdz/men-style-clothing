@@ -1,5 +1,5 @@
 "use client";
-import { signIn, useSession, getProviders } from "next-auth/react";
+import { signIn } from "next-auth/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -8,10 +8,8 @@ import UserList from "@/app/api/users.json";
 const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [providers, setProviders] = useState<any>(null);
 
   const router = useRouter();
-  const { data: session } = useSession();
 
   const handleSignIn = () => {
     const user = UserList.find((user) => user.email === email);
@@ -31,18 +29,6 @@ const Signin = () => {
     signIn("google");
   };
 
-  useEffect(() => {
-    const setUpProviders = async () => {
-      const response = await getProviders();
-      setProviders(response);
-
-      if (session?.user) {
-        router.push("/");
-      }
-    };
-
-    setUpProviders();
-  }, [router, session?.user]);
 
   return (
     <div className="min-h-screen flex items-center justify-center flex-col bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
