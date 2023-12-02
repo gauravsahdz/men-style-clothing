@@ -1,5 +1,5 @@
 "use client";
-import { signIn, useSession } from "next-auth/react";
+import { signIn, useSession, getProviders } from "next-auth/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -8,6 +8,8 @@ import UserList from "@/app/api/users.json";
 const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [providers, setProviders] = useState<any>(null);
+
   const router = useRouter();
   const { data: session } = useSession();
 
@@ -30,9 +32,16 @@ const Signin = () => {
   };
 
   useEffect(() => {
-    if (session?.user) {
-      router.push("/");
-    }
+    const setUpProviders = async () => {
+      const response = await getProviders();
+      setProviders(response);
+
+      if (session?.user) {
+        router.push("/");
+      }
+    };
+
+    setUpProviders();
   }, [router, session?.user]);
 
   return (
