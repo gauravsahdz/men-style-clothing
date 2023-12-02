@@ -1,10 +1,10 @@
 // pages/admin/[page].tsx
 "use client";
 import { useParams } from "next/navigation"; // Import useRouter from next/router instead of next/navigation
-import PageNotFound from "@/components/PageNotFound";
 import EditProduct from "@/pages/Product/editProduct";
 import AddProduct from "@/pages/Product/addProduct";
 import AdminPage from "../../page";
+import PageNotFound from "@/app/[...not_found]/page";
 
 const AdminDynamicPage = () => {
   const { id } = useParams<{ id: string }>();

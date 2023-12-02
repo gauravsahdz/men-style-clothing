@@ -3,10 +3,10 @@
 import { useParams } from "next/navigation"; // Import useRouter from next/router instead of next/navigation
 import Dashboard from "@/components/admin/Dashboard";
 import AdminPage from "../page";
-import PageNotFound from "@/components/PageNotFound";
 import ProductTable from "@/pages/ProductTable";
 import EditProduct from "@/pages/Product/editProduct";
 import AddProduct from "@/pages/Product/addProduct";
+import PageNotFound from "@/app/[...not_found]/page";
 
 const AdminDynamicPage = () => {
   const params = useParams();
