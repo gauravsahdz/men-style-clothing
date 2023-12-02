@@ -138,6 +138,7 @@ const ProductForm = ({ id, task }: ProductFormProps) => {
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             placeholder="Enter the product description"
             required
+            rows={5}
           />
         </div>
 
@@ -310,17 +311,28 @@ const ProductForm = ({ id, task }: ProductFormProps) => {
           {imageList.length > 0 && (
             <div>
               <p className="font-medium text-gray-700 md:text-sm text-xs sm:text-base">
-                Added Images:
+                Added Previews:
               </p>
               <ul>
                 {imageList.map((image, index) => (
-                  <li key={index}>
-                    <span className="text-gray-600 md:text-sm text-xs truncate sm:text-base mr-2">
-                      {image.name}
+                  <li
+                    key={index}
+                    className="flex flex-start items-center border-b border-gray-300 py-2"
+                  >
+                    <span className="font-medium text-gray-700 md:text-sm text-xs sm:text-base">
+                      {index + 1}.
+                    </span>
+                    <span className="ml-2">
+                      <Image
+                        src={image.name}
+                        alt="Thumbnail"
+                        width={80}
+                        height={80}
+                      />
                     </span>
                     {id ? (
                       <button
-                        className="text-red-600 hover:text-red-900"
+                        className="ml-2 text-red-500 font-medium text-sm"
                         onClick={() => {
                           setImageList(imageList.filter((_, i) => i !== index));
                         }}
@@ -339,7 +351,7 @@ const ProductForm = ({ id, task }: ProductFormProps) => {
 
         <div className="mb-4">
           <button
-            className="bg-indigo-500 text-white px-4 py-2 rounded-md"
+            className="bg-indigo-500 text-white px-4 py-2 rounded-md sm:text-base text-sm font-medium"
             onClick={() => {
               const newInput = document.createElement("input");
               newInput.type = "file";
@@ -350,7 +362,7 @@ const ProductForm = ({ id, task }: ProductFormProps) => {
               newInput.click();
             }}
           >
-            Add More Images
+            Add More Previews
           </button>
         </div>
         <div className="mt-6 flex justify-end">
