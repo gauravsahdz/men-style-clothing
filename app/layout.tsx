@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <AuthProvider>
+        <AuthProvider session={null}>
           <LoaderProvider>
             <Nav />
             {children}

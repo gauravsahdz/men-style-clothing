@@ -9,7 +9,7 @@ const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
 
   const handleSignIn = () => {
     const user = UserList.find((user) => user.email === email);
