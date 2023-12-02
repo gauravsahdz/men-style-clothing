@@ -7,6 +7,7 @@ import ProductTable from "@/pages/ProductTable";
 import EditProduct from "@/pages/Product/editProduct";
 import AddProduct from "@/pages/Product/addProduct";
 import PageNotFound from "@/app/[...not_found]/page";
+import OrdersTable from "@/pages/Orders";
 
 const AdminDynamicPage = () => {
   const params = useParams();
@@ -22,6 +23,8 @@ const AdminDynamicPage = () => {
         return <EditProduct id={id} />;
       case `products/add`:
         return <AddProduct />;
+      case `orders`:
+        return <OrdersTable />;
       default:
         return <PageNotFound />;
     }
