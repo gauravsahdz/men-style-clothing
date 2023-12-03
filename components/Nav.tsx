@@ -19,7 +19,7 @@ const Nav = () => {
   const [toggleNavDropdown, setToggleNavDropdown] = useState(false);
 
   const [providers, setProviders] = useState<any>(null);
-  const isAdmin: boolean = true;
+  const isAdmin: boolean = false;
   const totalItems = useCartStore((state) => state.totalItems);
 
   useEffect(() => {
