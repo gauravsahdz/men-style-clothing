@@ -19,9 +19,8 @@ export default function RootLayout({
         <title>Home</title>
         <meta
           name="description"
-          content="
-          Modern T-shirt and Hoodies for your everyday style.
-        "
+          content="Modern T-shirt and Hoodies for your everyday style."
+          key="desc"
         />
         <meta name="keywords" content="men-style" />
         <meta name="author" content="Gaurav Sah" />
