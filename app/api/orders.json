@@ -9,19 +9,19 @@
     "phone": "1234567890",
     "email": "test@gmail.com",
     "orderDate": "2020-01-01",
-    "orderStatus": "processing",
+    "orderStatus": "pending",
     "orderItems": [
       {
         "id": "1",
         "thumbnail": "https://i.pinimg.com/564x/05/da/ad/05daadda790bd6a262f7cf63e193117b.jpg",
-        "name": "Product 1",
+        "name": "Cream T-shirt",
         "price": "100",
         "quantity": "2"
       },
       {
         "id": "2",
         "thumbnail": "https://i.pinimg.com/564x/2b/61/54/2b61542437c2df774c3ca664bd8f8418.jpg",
-        "name": "Product 2",
+        "name": "Devil T-shit",
         "price": "200",
         "quantity": "1"
       }
@@ -38,7 +38,65 @@
     "phone": "1234567890",
     "email": "dfsds@test.mail",
     "orderDate": "2023-02-21",
-    "orderStatus": "delivered",
+    "orderStatus": "completed",
+    "orderItems": [
+      {
+        "id": "1",
+        "thumbnail": "https://i.pinimg.com/564x/05/da/ad/05daadda790bd6a262f7cf63e193117b.jpg",
+        "name": "Product 1",
+        "price": "100",
+        "quantity": "3"
+      },
+      {
+        "id": "2",
+        "thumbnail": "https://i.pinimg.com/564x/2b/61/54/2b61542437c2df774c3ca664bd8f8418.jpg",
+        "name": "Product 2",
+        "price": "200",
+        "quantity": "5"
+      }
+    ],
+    "orderTotal": "1300"
+  },
+  {
+    "id": "xy458we",
+    "user": {
+      "name": "Ram sah",
+      "profilePic": "/images/avatar.png"
+    },
+    "address": "California",
+    "phone": "1234567890",
+    "email": "dfsds@test.mail",
+    "orderDate": "2023-02-21",
+    "orderStatus": "dispatch",
+    "orderItems": [
+      {
+        "id": "1",
+        "thumbnail": "https://i.pinimg.com/564x/05/da/ad/05daadda790bd6a262f7cf63e193117b.jpg",
+        "name": "Product 1",
+        "price": "100",
+        "quantity": "3"
+      },
+      {
+        "id": "2",
+        "thumbnail": "https://i.pinimg.com/564x/2b/61/54/2b61542437c2df774c3ca664bd8f8418.jpg",
+        "name": "Product 2",
+        "price": "200",
+        "quantity": "5"
+      }
+    ],
+    "orderTotal": "1300"
+  },
+  {
+    "id": "xy458we",
+    "user": {
+      "name": "Ram sah",
+      "profilePic": "/images/avatar.png"
+    },
+    "address": "California",
+    "phone": "1234567890",
+    "email": "dfsds@test.mail",
+    "orderDate": "2023-02-21",
+    "orderStatus": "cancelled",
     "orderItems": [
       {
         "id": "1",

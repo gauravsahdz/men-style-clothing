@@ -19,6 +19,7 @@ const Nav = () => {
   const [toggleNavDropdown, setToggleNavDropdown] = useState(false);
 
   const [providers, setProviders] = useState<any>(null);
+  const isAdmin: boolean = true;
   const totalItems = useCartStore((state) => state.totalItems);
 
   useEffect(() => {
@@ -30,8 +31,12 @@ const Nav = () => {
     setUpProviders();
   }, []);
 
+  const navClass = `navbar flex flex-wrap items-center justify-between w-full px-4 py-4 lg:px-0 bg-white z-10 sticky top-0 shadow-md
+    ${isAdmin ? "hidden" : ""}
+    `;
+
   return (
-    <div className="navbar flex flex-wrap items-center justify-between w-full px-4 py-4 lg:px-0 bg-white z-10 sticky top-0 shadow-md">
+    <div className={navClass}>
       <div className="flex items-center flex-shrink-0 text-black mr-6 hover:cursor-pointer ml-4">
         <Link href="/" legacyBehavior>
           <Image
