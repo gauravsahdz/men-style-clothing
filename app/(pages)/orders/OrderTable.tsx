@@ -84,7 +84,9 @@ const OrdersTable = ({
         ? a.orderDate.localeCompare(b.orderDate)
         : b.orderDate.localeCompare(a.orderDate);
     } else {
-      return 0;
+      // Consider order status when sorting
+      const orderStatusComparison = a.orderStatus.localeCompare(b.orderStatus);
+      return orderStatusComparison !== 0 ? orderStatusComparison : 0;
     }
   });
 

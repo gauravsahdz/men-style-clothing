@@ -3,11 +3,12 @@
 import { useParams } from "next/navigation"; // Import useRouter from next/router instead of next/navigation
 import Dashboard from "@/components/admin/Dashboard";
 import AdminPage from "../page";
-import ProductTable from "@/pages/ProductTable";
-import EditProduct from "@/pages/Product/editProduct";
-import AddProduct from "@/pages/Product/addProduct";
 import PageNotFound from "@/app/[...not_found]/page";
-import OrderPage from "@/pages/Orders";
+import ProductTable from "../../ProductTable";
+import EditProduct from "../../product/editProduct";
+import AddProduct from "../../product/addProduct";
+import OrderPage from "../../orders/page";
+import Page from "../../product/page";
 
 const AdminDynamicPage = () => {
   const params = useParams();
@@ -18,7 +19,7 @@ const AdminDynamicPage = () => {
       case "dashboard":
         return <Dashboard />;
       case "products":
-        return <ProductTable />;
+        return < Page/>;
       case `products/${id}`:
         return <EditProduct id={id} />;
       case `products/add`:

@@ -2,16 +2,43 @@ import React, { useEffect, useState } from "react";
 import OrdersTable from "./OrderTable";
 import Image from "next/image";
 import OrderDetail from "@/components/OrderDetail";
+import InfoTable from "@/components/Table";
+import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
+import orderList from "@/app/api/orders.json";
 
 const OrderPage = () => {
   const [activeTab, setActiveTab] = useState("all");
   const [openOrderDetail, setOpenOrderDetail] = useState(false);
   const [orderDetailPass, setOrderDetailPass] = useState("");
 
+  const handleOpenInfo = (id: string) => {
+    setOpenOrderDetail(true);
+    setOrderDetailPass(id);
+  };
+
+  const columns = [
+    { field: "id", label: "Id" },
+    { field: "name", label: "Name" },
+    { field: "address", label: "Address" },
+    { field: "orderDate", label: "Date" },
+    { field: "orderTotal", label: "Price" },
+    { field: "orderStatus", label: "Status" },
+  ];
+
+  const actions = [
+    {
+      icon: faCircleInfo,
+      color: "text-yellow-500",
+      size: "lg",
+      func: () => {
+        handleOpenInfo("1");
+      },
+    },
+  ];
+
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
   };
-  
 
   return (
     <div className="flex flex-col w-full h-full">
@@ -84,12 +111,13 @@ const OrderPage = () => {
         </div>
       </div>
 
-      <OrdersTable
+      {/* <OrdersTable
         tab={activeTab}
         openOrderDetail={openOrderDetail}
         setOpenOrderDetail={setOpenOrderDetail}
         setOrderDetailPass={setOrderDetailPass}
-      />
+      /> */}
+      <InfoTable columns={columns} dataList={orderList} actions={actions} />
       <OrderDetail
         open={openOrderDetail}
         setOpenOrderDetail={setOpenOrderDetail}

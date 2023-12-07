@@ -1,10 +1,7 @@
 [
   {
     "id": "xy324we",
-    "user": {
-      "name": "John Doe",
-      "profilePic": "/images/avatar.png"
-    },
+    "name": "John Doe",
     "address": "New York",
     "phone": "1234567890",
     "email": "test@gmail.com",
@@ -30,10 +27,7 @@
   },
   {
     "id": "xy458we",
-    "user": {
-      "name": "Ram sah",
-      "profilePic": "/images/avatar.png"
-    },
+    "name": "Ram sah",
     "address": "California",
     "phone": "1234567890",
     "email": "dfsds@test.mail",
@@ -58,15 +52,12 @@
     "orderTotal": "1300"
   },
   {
-    "id": "xy458we",
-    "user": {
-      "name": "Ram sah",
-      "profilePic": "/images/avatar.png"
-    },
-    "address": "California",
+    "id": "tr326we",
+    "name": "Hari sah",
+    "address": "Nepal",
     "phone": "1234567890",
     "email": "dfsds@test.mail",
-    "orderDate": "2023-02-21",
+    "orderDate": "2023-12-12",
     "orderStatus": "dispatch",
     "orderItems": [
       {
@@ -87,12 +78,9 @@
     "orderTotal": "1300"
   },
   {
-    "id": "xy458we",
-    "user": {
-      "name": "Ram sah",
-      "profilePic": "/images/avatar.png"
-    },
-    "address": "California",
+    "id": "gds546t",
+    "name": "Parbati sah",
+    "address": "India",
     "phone": "1234567890",
     "email": "dfsds@test.mail",
     "orderDate": "2023-02-21",
