@@ -90,7 +90,7 @@ const ProductForm = ({ id, task }: ProductFormProps) => {
         setSizes(product.sizes);
         setPrice(product.price);
         setDiscountPercentage(
-          product.discountPercentage ? product.discountPercentage : 0
+          product.discount ? product.discount : 0
         );
         setImageList(product.images.map((image) => new File([], image)));
         setSelectedFile(new File([], product.thumbnail));

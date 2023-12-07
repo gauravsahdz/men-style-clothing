@@ -1,16 +1,18 @@
-'use client'
+"use client";
 import React, { useEffect, useState } from "react";
-import OrdersTable from "./OrderTable";
 import Image from "next/image";
 import OrderDetail from "@/components/OrderDetail";
 import InfoTable from "@/components/Table";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
-import orderList from "@/app/api/orders.json";
+import orders from "@/app/api/orders.json";
 
 const OrderPage = () => {
   const [activeTab, setActiveTab] = useState("all");
   const [openOrderDetail, setOpenOrderDetail] = useState(false);
   const [orderDetailPass, setOrderDetailPass] = useState("");
+  const [initialFilterDate, setInitialFilterDate] = useState("");
+  const [finalFilterDate, setFinalFilterDate] = useState("");
+  const [orderList, setOrderList] = useState(orders);
 
   const handleOpenInfo = (id: string) => {
     setOpenOrderDetail(true);
@@ -40,6 +42,41 @@ const OrderPage = () => {
 
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
+    orders.filter((order) => {
+      if (tab === "all") {
+        setOrderList(orders);
+      } else if (tab === "dispatch") {
+        setOrderList(
+          orders.filter((order) => order.orderStatus === "dispatch")
+        );
+      } else if (tab === "pending") {
+        setOrderList(orders.filter((order) => order.orderStatus === "pending"));
+      } else if (tab === "completed") {
+        setOrderList(
+          orders.filter((order) => order.orderStatus === "completed")
+        );
+      }
+    });
+  };
+
+  const handleFilterDate = () => {
+    const filteredOrders = orders.filter(
+      (order) =>
+        order.orderDate >= initialFilterDate &&
+        order.orderDate <= finalFilterDate
+    );
+    setOrderList(filteredOrders);
+  };
+
+  const searchOrder = (value: string) => {
+    const filteredProduct = orders.filter((order) => {
+      return (
+        order.name.toLowerCase().includes(value.toLowerCase()) ||
+        order.orderStatus.toLowerCase().includes(value.toLowerCase()) ||
+        order.address.toLowerCase().includes(value.toLowerCase())
+      );
+    });
+    setOrderList(filteredProduct);
   };
 
   return (
@@ -89,6 +126,7 @@ const OrderPage = () => {
             type="text"
             placeholder="  Search"
             className="border border-gray-300 rounded-3xl p-2 pr-8 sm:w-64 w-full focus:outline-none mb-2 sm:mb-0"
+            onChange={(e) => searchOrder(e.target.value)}
           />
           <Image
             src="/images/search.svg"
@@ -102,12 +140,19 @@ const OrderPage = () => {
           <input
             type="date"
             className="border border-gray-200 rounded px-4 py-2"
+            value={initialFilterDate}
+            onChange={(e) => setInitialFilterDate(e.target.value)}
           />
           <input
             type="date"
             className="border border-gray-200 rounded px-4 py-2"
+            value={finalFilterDate}
+            onChange={(e) => setFinalFilterDate(e.target.value)}
           />
-          <button className="px-4 py-2 rounded bg-blue-500 text-white">
+          <button
+            className="px-4 py-2 rounded bg-blue-500 text-white"
+            onClick={handleFilterDate}
+          >
             Filter
           </button>
         </div>
