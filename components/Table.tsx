@@ -65,7 +65,11 @@ const InfoTable = ({ columns, dataList, actions }: InfoTableProps) => {
           className={action.color}
           onClick={() => action.func(id)}
         >
-          <FontAwesomeIcon icon={action.icon} size={action.size} />
+          <FontAwesomeIcon
+            icon={action.icon}
+            size={action.size}
+            title={action.tooltip}
+          />
         </button>
       ))}
     </div>

@@ -31,8 +31,9 @@ const OrderPage = () => {
       icon: faCircleInfo,
       color: "text-yellow-500",
       size: "lg",
-      func: () => {
-        handleOpenInfo("1");
+      tooltip: "View Order",
+      func: (id: string) => {
+        handleOpenInfo(id);
       },
     },
   ];

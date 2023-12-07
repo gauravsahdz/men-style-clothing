@@ -41,6 +41,7 @@ const Page = () => {
       icon: faEdit,
       color: "text-indigo-500",
       size: "lg",
+      tooltip: "Edit",
       func: (id: string) => {
         router.push(`/admin/products/${id}`);
       },
@@ -49,6 +50,7 @@ const Page = () => {
       icon: faTrash,
       color: "text-red-500",
       size: "lg",
+      tooltip: "Delete",
       func: (id: string) => {
         deleteModal(id);
       },
