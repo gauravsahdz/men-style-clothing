@@ -7,7 +7,7 @@ import { useCartStore } from "@/reducers/useCartStore";
 import Image from "next/image";
 import logo from "../public/images/logo.png";
 import "@/styles/components/_navbar.css";
-import { navRoutes } from "@/utils/routes";
+import { routes } from "@/utils/routes";
 import { signIn, useSession, getProviders, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import hamburgerIcon from "public/images/hamburger.svg";
@@ -54,7 +54,7 @@ const Nav = () => {
       >
         <nav>
           <ul className="lg:flex items-center justify-between text-base text-black pt-4 lg:pt-0">
-            {navRoutes.map((route, index) => (
+            {routes.map((route, index) => (
               <li key={index}>
                 <Link href={route.path} legacyBehavior>
                   <a className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">

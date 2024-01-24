@@ -1,14 +1,14 @@
 // pages/admin/[page].tsx
 "use client";
-import { useParams } from "next/navigation"; // Import useRouter from next/router instead of next/navigation
+import { useParams } from "next/navigation";
 import Dashboard from "@/components/admin/Dashboard";
 import AdminPage from "../page";
 import PageNotFound from "@/app/[...not_found]/page";
-import ProductTable from "../../ProductTable";
 import EditProduct from "../../product/editProduct";
 import AddProduct from "../../product/addProduct";
 import OrderPage from "../../orders/page";
 import Page from "../../product/page";
+import Setting from "../../setting/page";
 
 const AdminDynamicPage = () => {
   const params = useParams();
@@ -26,6 +26,8 @@ const AdminDynamicPage = () => {
         return <AddProduct />;
       case `orders`:
         return <OrderPage />;
+        case `setting`:
+        return <Setting />;
       default:
         return <PageNotFound />;
     }
